@@ -1,25 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import './App.css';
+import Card from './components/Card';
+
+function App(){
+
+  let data = [ {
+    plan:"FREE",
+    price:0,
+    user:"Single User",
+    userEnabler:true,
+    storage:"5GB storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:false,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:false,
+    subdomain:"Free Sundomain",
+    subdomainEnabler:false,
+    reports:"Monthly Status Reports",
+    reportsEnabler:false
+  },
+  {
+    plan:"PLUS",
+    price:9,
+    user:"5 User",
+    userEnabler:true,
+    storage:"5GB storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:true,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:true,
+    subdomain:"Free Sundomain",
+    subdomainEnabler:true,
+    reports:"Monthly Status Reports",
+    reportsEnabler:false
+  },
+  {
+    plan:"PRO",
+    price:49,
+    user:"Unlimited User",
+    userEnabler:true,
+    storage:"150GB storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:true,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:true,
+    subdomain:"Free Sundomains",
+    subdomainEnabler:true,
+    reports:"Monthly Status Reports",
+    reportsEnabler:true
+  }
+]
+
+  return <>
+  <section className="pricing py-5">
+  <div className="container">
+    <div className="row">
+        {/* <Card card={data[0]}/>
+        <Card card={data[1]}/>
+        <Card card={data[2]}/>  */}
+
+        {
+          data.map((e)=>{
+            return <Card card={e}/>
+          })
+        }
+   
     </div>
-  );
+  </div>
+</section>
+  </>
 }
 
 export default App;
